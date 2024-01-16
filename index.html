@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nike</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="shortcut icon" type="x-icon" href="./images/nike logo.png">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Gabarito&family=Poppins:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .search-bar input:focus {
+      outline: none;
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <section class="navbar flex justify-between p-5 items-center sticky top-0 bg-white ">
+    <div class="logo">
+      <img src="./images/nike logo.png" class="w-15 h-8 ">
+    </div>
+    <div class="features flex gap-8 cursor-pointer font-medium flex-wrap text-xl">
+      <p class="hidden md:block cursor-pointer">New & featured</p>
+      <p class="hidden md:block cursor-pointer">Mens</p>
+      <p class="hidden md:block cursor-pointer">Womens</p>
+      <p class="hidden md:block cursor-pointer">Kids</p>
+      <p class="hidden md:block cursor-pointer">Sale</p>
+    </div>
+    <div class="icons flex gap-8 cursor-pointer items-center">
+      <div class="search-bar flex   hidden md:block"
+        style="vertical-align: top;border-radius: 30px; background-color: #F5F5F5; align-items: center; display: flex; flex-direction: row;">
+        <i class="fa-sharp fa-solid fa-magnifying-glass p-2"></i>
+        <input type="search" placeholder="Search"
+          style="border-radius: 30px; background-color: #F5F5F5; padding: 10px;width: 120px; ">
+      </div>
+      <div class="side-icons flex gap-8 cursor-pointer">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6 md:hidden" id="menu">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="side-nav md:hidden transition-all duration-1000" id="sidenav"
+    style="width: 50%; border: solid black 1px; height: 100vh; position: fixed; top: 0; background-color: white; right: -50%;">
+    <div class="close m-8 cursor-pointer text-right ">
+      <i class="fa-solid fa-x" id="close"></i>
+
+    </div>
+    <ul class="p-5 cursor-pointer">
+      <li class="p-5 border-b-2">New & featured</li>
+      <li class="p-5 border-b-2">Mens</li>
+      <li class="p-5 border-b-2">Womens</li>
+      <li class="p-5 border-b-2">Kids</li>
+      <li class="p-5 border-b-2">Sale</li>
+    </ul>
+  </section>
+
+  <section class="container">
+    <div class="slide">
+      <img src="./images/carousel5.jpg" class="mySlides md:h-screen" style="width: 100%;" alt="">
+      <img src="./images/carousel2.jpg" alt="" class="mySlides md:h-screen" style="width: 100%; ">
+      <img src="./images/carousel 3.jpg" alt="" class="mySlides md:h-screen" style="width: 100%; ">
+  </div>
+    
+  </section>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
