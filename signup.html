@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" type="x-icon" href="./images/nike logo.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text&family=Fira+Sans&family=Gabarito&family=Poppins:wght@300;400&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<style>
+    .box {
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+</style>
+
+<body>
+
+    <div class="container border-2 w-96 m-auto mt-24">
+        <div class="box text-center items-center justify-center h-72 p-5 ">
+            <h1 class="p-2 uppercase font-semibold">Sign in</h1>
+            <div class="email-box border-2 p-2 text-center ml-12 m-2 w-56 flex items-center">
+                <input type="text" id="name" class="outline-0" placeholder="enter your name"><br>
+                <i class="fa-solid fa-face-smile"></i>
+            </div>
+            <div class="email-box border-2 p-2 text-center ml-12 m-2 w-56 flex items-center">
+                <input type="email" id="email" class="outline-0" placeholder="enter your email"><br>
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="password-box border-2 p-2 text-center ml-12 m-2 w-56 flex items-center">
+                <input type="password" class="outline-0" placeholder="password" id="password">
+                <i class="fa-regular fa-eye cursor-pointer" id="eyecon"></i>
+            </div>
+            <button id="submit" class="border-2 p-2 m-2 w-20 mt-5 bg-blue-600 text-white rounded-md">Submit</button>
+            <p>Already have an account? <a href="login.html" class="text-blue-600">Login</a></p>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        let password = document.getElementById("password");
+        let eyecon = document.getElementById("eyecon");
+        eyecon.onclick = function () {
+            if (password.type == "password") {
+                password.type = "text";
+                eyecon.style.color = "#2563EB";
+            }
+            else {
+                password.type = "password";
+                eyecon.style.color = "#000000";
+
+            }
+        }
+    </script>
+    <script type="module" defer>
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBcdWiWoIiYWjaUZ5bUSf87xzKnqz0tFs8",
+            authDomain: "credo-site-d16a7.firebaseapp.com",
+            projectId: "credo-site-d16a7",
+            storageBucket: "credo-site-d16a7.appspot.com",
+            messagingSenderId: "61466558780",
+            appId: "1:61466558780:web:a51fb8848328bb8ff35e39"
+        };
+
+        // Initialize Firebase
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        var submit = document.getElementById("submit");
+        submit.addEventListener("click", function (event) {
+            event.preventDefault();
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed up 
+                    const user = userCredential.user;
+                    alert("Creating Account...");
+                    // ...
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                    // ..
+                });
+        })
+    </script>
+</body>
+
+
+</html>
