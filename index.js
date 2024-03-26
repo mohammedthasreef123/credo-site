@@ -165,3 +165,116 @@ user.addEventListener("click", function () {
   alert("This section is under development")
 })
 
+var item1 = document.getElementById("cart1");
+function handlecart1(){
+  if (item1.style.backgroundColor == "white") {
+    item1.style.backgroundColor = "black";
+    item1.style.color = "white";
+    item1.innerText = "Add to Cart";
+  }
+  else{
+    item1.style.backgroundColor = "white";
+    item1.style.border = "1px solid black"
+    item1.style.color = "black";
+    item1.innerText = "Added";
+}
+}
+
+var item2 = document.getElementById("cart2");
+function handlecart2(){
+  if (item2.style.backgroundColor == "white") {
+    item2.style.backgroundColor = "black";
+    item2.style.color = "white";
+    item2.innerText = "Add to Cart";
+  }
+  else{
+    item2.style.backgroundColor = "white";
+    item2.style.border = "1px solid black"
+    item2.style.color = "black";
+    item2.innerText = "Added";
+}
+}
+var item3 = document.getElementById("cart3");
+function handlecart3(){
+  if (item3.style.backgroundColor == "white") {
+    item3.style.backgroundColor = "black";
+    item3.style.color = "white";
+    item3.innerText = "Add to Cart";
+  }
+  else{
+    item3.style.backgroundColor = "white";
+    item3.style.border = "1px solid black"
+    item3.style.color = "black";
+    item3.innerText = "Added";
+}
+}
+var item4 = document.getElementById("cart4");
+function handlecart4(){
+  if (item4.style.backgroundColor == "white") {
+    item4.style.backgroundColor = "black";
+    item4.style.color = "white";
+    item4.innerText = "Add to Cart";
+  }
+  else{
+    item4.style.backgroundColor = "white";
+    item4.style.border = "1px solid black"
+    item4.style.color = "black";
+    item4.innerText = "Added";
+}
+}
+var item5 = document.getElementById("cart5");
+function handlecart5(){
+  if (item5.style.backgroundColor == "white") {
+    item5.style.backgroundColor = "black";
+    item5.style.color = "white";
+    item5.innerText = "Add to Cart";
+  }
+  else{
+    item5.style.backgroundColor = "white";
+    item5.style.border = "1px solid black"
+    item5.style.color = "black";
+    item5.innerText = "Added";
+}
+}
+var item6 = document.getElementById("cart6");
+function handlecart6(){
+  if (item6.style.backgroundColor == "white") {
+    item6.style.backgroundColor = "black";
+    item6.style.color = "white";
+    item6.innerText = "Add to Cart";
+  }
+  else{
+    item6.style.backgroundColor = "white";
+    item6.style.border = "1px solid black"
+    item6.style.color = "black";
+    item6.innerText = "Added";
+}
+}
+var item7 = document.getElementById("cart7");
+function handlecart7(){
+  if (item7.style.backgroundColor == "white") {
+    item7.style.backgroundColor = "black";
+    item7.style.color = "white";
+    item7.innerText = "Add to Cart";
+  }
+  else{
+    item7.style.backgroundColor = "white";
+    item7.style.border = "1px solid black"
+    item7.style.color = "black";
+    item7.innerText = "Added";
+}
+}
+var item8 = document.getElementById("cart8");
+function handlecart8(){
+  if (item8.style.backgroundColor == "white") {
+    item8.style.backgroundColor = "black";
+    item8.style.color = "white";
+    item8.innerText = "Add to Cart";
+  }
+  else{
+    item8.style.backgroundColor = "white";
+    item8.style.border = "1px solid black"
+    item8.style.color = "black";
+    item8.innerText = "Added";
+}
+}
