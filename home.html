@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credo site</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="shortcut icon" type="x-icon" href="./images/nike logo.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text&family=Fira+Sans&family=Gabarito&family=Poppins:wght@300;400&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .search-bar input:focus {
+      outline: none;
+    }
+
+    body {
+      font-family: 'Big Shoulders Text', sans-serif;
+      font-family: 'Fira Sans', sans-serif;
+      font-family: 'Gabarito', sans-serif;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      white-space: nowrap;
+    }
+
+    .shop:hover {
+      opacity: 60%;
+      transition: 2ms;
+
+    }
+
+    @media screen and (min-width: 700px) {
+      .trending__box {
+        display: flex;
+      }
+
+      .card1 img {
+        height: 100%;
+      }
+
+      .mySlides {
+        width: 100%;
+      }
+    }
+
+    .scroll .containers {
+      display: flex;
+      overflow-x: scroll;
+      height: 50%;
+
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+
+    }
+
+    .container {
+      max-width: 1170px;
+      margin: auto;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+
+    .footer {
+      background-color: #24262b;
+      padding: 70px 0;
+    }
+
+    .footer-col {
+      width: 25%;
+      padding: 0 15px;
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      color: #ffffff;
+      text-transform: capitalize;
+      margin-bottom: 35px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .footer-col h4::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+
+      height: 2px;
+      box-sizing: border-box;
+      width: 50px;
+    }
+
+    .footer-col ul li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 16px;
+      text-transform: capitalize;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 300;
+      color: #bbbbbb;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+      color: #ffffff;
+      padding-left: 8px;
+    }
+
+    .footer-col .social-links a {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin: 0 10px 10px 0;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      color: #ffffff;
+      transition: all 0.5s ease;
+    }
+
+    .footer-col .social-links a:hover {
+      color: #24262b;
+      background-color: #ffffff;
+    }
+
+    /*responsive*/
+    @media(max-width: 767px) {
+      .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media(max-width: 574px) {
+      .footer-col {
+        width: 100%;
+      }
+    }
+
+    .new:hover {
+      color: darkred;
+      text-decoration: underline;
+    }
+
+    .mens:hover {
+      color: darkred;
+      text-decoration: underline;
+    }
+
+    .womens:hover {
+      color: darkred;
+      text-decoration: underline;
+    }
+
+    .kids:hover {
+      color: darkred;
+      text-decoration: underline;
+    }
+
+    .sale:hover {
+      color: darkred;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="navbar" class="navbar flex justify-between p-5 items-center sticky top-0 bg-white z-10">
+    <div class="logo">
+      <img src="./images/logo with name.jpeg" class="w-20 h-15">
+    </div>
+    <div class="features flex gap-8 cursor-pointer font-medium flex-wrap text-xl">
+      <p class=" new hidden md:block cursor-pointer" id="new">New & featured</p>
+      <p class="mens hidden md:block cursor-pointer" id="mens">Mens</p>
+      <p class="womens hidden md:block cursor-pointer" id="womens">Womens</p>
+      <p class="kids hidden md:block cursor-pointer" id="kids">Kids</p>
+      <p class="sale hidden md:block cursor-pointer" id="sale">Sale</p>
+    </div>
+    <div class="icons flex gap-8 cursor-pointer items-center">
+      <div class="search-bar hidden md:block"
+        style="vertical-align: top;border-radius: 30px; background-color: #F5F5F5; align-items: center; display: flex; flex-direction: row;">
+        <i class="fa-sharp fa-solid fa-magnifying-glass p-2"></i>
+        <input type="search" id="search" placeholder="Search"
+          style="border-radius: 30px; background-color: #F5F5F5; padding: 10px;width: 120px; ">
+      </div>
+      <div class="side-icons flex gap-8 cursor-pointer">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6" id="cart">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+          </svg>
+          <p id="count" class="bg-red-600 text-white absolute top-10 rounded-full text-center text-xs w-fit px-1 h-fit">0</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6" id="user">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="w-6 h-6 md:hidden" id="menu">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </div>
+
+    </div>
+  </section>
+  <div id="logoutbtn" class="absolute hidden right-2 p-5 bg-white shadow-xl shadow-black my-5 w-fit" style="top: 10%;">
+    <button class="text-white bg-blue-500 p-2 rounded-md mx-5">Logout</button>
+  </div>
+
+  <section class="side-nav md:hidden transition-all duration-1000 z-30" id="sidenav"
+    style="width: 50%; border: solid black 1px; height: 100vh; position: fixed; top: 0; background-color: white; right: -50%;">
+    <div class="close m-8 cursor-pointer text-right ">
+      <i class="fa-solid fa-x" id="close"></i>
+
+    </div>
+    <ul class="p-5 cursor-pointer">
+      <li class="new p-5 border-b-2">New & featured</li>
+      <li class="mens p-5 border-b-2">Mens</li>
+      <li class="womens p-5 border-b-2">Womens</li>
+      <li class="kids p-5 border-b-2">Kids</li>
+      <li class="sale p-5 border-b-2">Sale</li>
+    </ul>
+  </section>
+
+  <section class="container ">
+    <div class="slide">
+      <img src="./images/carousel5.jpg" class="mySlides md:h-svh " style="width: 100%;" alt="">
+      <img src="./images/carousel2.jpg" alt="" class="mySlides md:h-svh " style="width: 100%; ">
+      <img src="./images/carousel 3.jpg" alt="" class="mySlides md:h-svh " style="width: 100%; ">
+    </div>
+
+  </section>
+  <section class="header p-5">
+    <p class="uppercase text-center font-bold text-4xl text-wrap p-5">This season's fresh fits</p>
+    <p class="text-wrap text-center p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit autem cumque
+      rerum voluptates delectus quis ut exercitationem alias? Beatae, nam!</p>
+    <div class="btn text-center">
+      <button class="shop bg-black text-white p-3 w-20 rounded-full cursor-pointer">Shop</button>
+    </div>
+  </section>
+  <section class="trending">
+    <p class="m-10 text-2xl">Trending</p>
+    <div class="trending__box">
+      <div class="card1 relative m-10">
+        <img src="./images/trending1.jpg" class="rounded h-3/4">
+        <div class="content absolute bottom-2 m-3 ">
+          <p class="text-white p-1">New phantom GX</p>
+          <button class="shop bg-white text-black p-1 w-20 rounded-full cursor-pointer">Shop</button>
+        </div>
+      </div>
+      <div class="card2 relative m-10">
+        <img src="./images/trending 33.jpg" class="rounded 1/2">
+        <div class="content absolute bottom-2 m-3 ">
+          <p class="text-white p-1">Retro running shoes</p>
+          <button class="shop bg-white text-black p-1 w-20 rounded-full cursor-pointer">Shop</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="video m-10 ">
+    <video width="100%" height="auto" autoplay muted loop class="w-full h-screen object-cover">
+      <source src="./images/vdo1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+  <section class="header p-5">
+    <p class="uppercase text-center font-bold text-4xl text-wrap">NIKE g.t. cut 3 </p>
+    <p class="text-wrap text-center p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sit autem cumque
+      rerum voluptates delectus quis ut exercitationem alias? Beatae, nam!</p>
+    <div class="btn text-center m-5">
+      <button class="shop bg-black text-white p-3 w-24 rounded-full cursor-pointer">Explore</button>
+    </div>
+  </section>
+  <section class="scroll">
+    <div class="workout text-center m-4">
+      <p class="text-2xl">Workout Essentials</p>
+
+    </div>
+    <div class="containers m-10" id="product-container">
+      <div class="box m-5 p-14 h-full">
+        <img src="./images/p1.png" class="rounded w-full h-full ">
+        <div class="favourite flex justify-between items-center">
+          <h1 class="font-black">Nike Metcon</h1>
+          <i class="fa-solid fa-heart" onclick="Toggle1()" id="btnh1" style="color: grey;"></i>
+        </div>
+        <p>Women's workout shoes</p>
+        <p class="font-black">MRP: 12,999/-</p>
+        <button class=" bg-black text-white p-2 m-3 w-40 rounded-full cursor-pointer" id="cart1"
+          onclick="handlecart1()">Add to Cart</button>
+      </div>
+      <div class="box h-full m-5 p-14">
+        <img src="./images/p2.png" class="rounded w-full h-full">
+        <div class="favourite flex justify-between items-center">
+          <h1 class="font-black">Nike Airmax</h1>
+          <i class="fa-solid fa-heart" onclick="Toggle2()" id="btnh2" style="color: grey;"></i>
+        </div>
+        <p>Women's Jogging shoes</p>
+        <p class="font-black">MRP: 8,999/-</p>
+        <button class=" bg-black text-white p-2 m-3 w-40 rounded-full cursor-pointer" id="cart2"
+          onclick="handlecart2()">Add to Cart</button>
+      </div>
+      <div class="box h-full m-5 p-14">
+        <img src="./images/p15.png" class="rounded w-full h-full">
+
+        <div class="favourite flex justify-between items-center">
+          <h1 class="font-black">Nike Airforce</h1>
+          <i class="fa-solid fa-heart" onclick="Toggle3()" id="btnh3" style="color: grey;"></i>
+        </div>
+        <p>Women's Walking shoes</p>
+        <p class="font-black">MRP: 6,999/-</p>
+        <button class=" bg-black text-white p-2 m-3 w-40 rounded-full cursor-pointer" id="cart3"
+          onclick="handlecart3()">Add to Cart</button>
+      </div>
+      <div class="box h-full m-5 p-14">
+        <img src="./images/p16.png" class="rounded w-full h-full">
+        <div class="favourite flex justify-between items-center">
+          <h1 class="font-black">Nike Dynamo</h1>
+          <i class="fa-solid fa-heart" onclick="Toggle4()" id="btnh4" style="color: grey;"></i>
+        </div>
+        <p>Kids/ Toddlers shoes</p>
+        <p class="font-black">MRP: 14,999/-</p>
+        <button class=" bg-black text-white p-2 m-3 w-40 rounded-full cursor-pointer" id="cart4"
+          onclick="handlecart4()">Add to Cart</button>
+      </div>
+      <div class="box h-full m-5 p-14">
+        <img src="./images/p11.png" class="rounded w-full h-full">
+        <div class="favourite flex justify-between items-center">
+          <h1 class="font-black">Jordan One</h1>
+          <i class="fa-solid fa-heart" onclick="Toggle5()" id="btnh5" style="color: grey;"></i>
+        </div>
+        <p>Men's workout shoes</p>
+        <p class="font-black">MRP: 6,449/-</p>
+        <button class=" bg-black text-white p-2 m-3 w-40 rounded-full cursor-pointer" id="cart5"
+          onclick="handlecart5()">Add to Cart</button>
+      </div>
+      <div class="box h-full m-5 p-14">
+        <img src="./images/product 3.png" class="rounded w-full h-full">
+        <div class="favourite flex justify-between items-center">
+          <h1 class="font-black">Air Jordan</h1>
+          <i class="fa-solid fa-heart" onclick="Toggle6()" id="btnh6" style="color: grey;"></i>
+        </div>
+        <p>Men's workout shoes</p>
+        <p class="font-black">MRP: 7,999/-</p>
+        <button class=" bg-black text-white p-2 m-3 w-40 rounded-full cursor-pointer" id="cart6"
+          onclick="handlecart6()">Add to Cart</button>
+      </div>
+      <div class="box h-full m-5 p-14">
+        <img src="./images/product 2.png" class="rounded w-full h-full">
+        <div class="favourite flex justify-between items-center">
+          <h1 class="font-black">Nike Dunk</h1>
+          <i class="fa-solid fa-heart" onclick="Toggle7()" id="btnh7" style="color: grey;"></i>
+        </div>
+        <p>Men's Sports shoes</p>
+        <p class="font-black">MRP: 4,449/-</p>
+        <button class=" bg-black text-white p-2 m-3 w-40 rounded-full cursor-pointer" id="cart7"
+          onclick="handlecart7()">Add to Cart</button>
+      </div>
+      <div class="box h-full m-5 p-14">
+        <img src="./images/product 1.png" class="rounded w-full h-full">
+        <div class="favourite flex justify-between items-center">
+          <h1 class="font-black">Jordan Stadium</h1>
+          <i class="fa-solid fa-heart" onclick="Toggle8()" id="btnh8" style="color: grey;"></i>
+        </div>
+        <p>Men's office shoes</p>
+        <p class="font-black">MRP: 7,999/-</p>
+        <button class=" bg-black text-white p-2 m-3 w-40 rounded-full cursor-pointer" id="cart8"
+          onclick="handlecart8()">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">affiliate program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">shipping</a></li>
+            <li><a href="#">returns</a></li>
+            <li><a href="#">order status</a></li>
+            <li><a href="#">payment options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>online shop</h4>
+          <ul>
+            <li><a href="#">watch</a></li>
+            <li><a href="#">bag</a></li>
+            <li><a href="#">shoes</a></li>
+            <li><a href="#">dress</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="index.js"></script>
+</body>
+
+</html>
